@@ -8,7 +8,8 @@ from settings import config
 
 
 async def main():
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.INFO,
+                        format="%(asctime)s - %(levelname)s - %(name)s - %(message)s")
 
     bot = Bot(token=config.bot_token.get_secret_value(), parse_mode="HTML")
     dp = Dispatcher()
